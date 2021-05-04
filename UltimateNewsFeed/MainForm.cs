@@ -34,9 +34,7 @@ namespace UltimateNewsFeed
                     //   so we need to check the part after the dot
                     if (type.FullName != null && type.FullName.Split('.')[1].Contains("NewsSource"))
                     {
-                        //dynamic newsSourceInstance = Activator.CreateInstance(type);
                         newsSourceInstance = Activator.CreateInstance(type);
-                        //var newsSource = newsSourceInstance as INewsSource;
                     }
 
                 }

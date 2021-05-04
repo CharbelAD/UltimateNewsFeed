@@ -28,7 +28,7 @@ namespace UltimateNewsFeed
         {
             if (changed)
             {
-                MessageBox.Show("Got FeedChanged event");
+                MessageBox.Show(@"Feed changed, do you want to refresh?", @"Notice", MessageBoxButtons.OKCancel);
                 _populateDGV();
             }
         }
@@ -90,14 +90,11 @@ namespace UltimateNewsFeed
             {
                 MessageBox.Show(@"No rows selected.", @"Notice");
                 return;
-                
             }
 
             try
             {
                 _thisNewsSource.DeleteEntries(toDeleteEntries);
-                MessageBox.Show(@"Successfully deleted row(s).", @"Success");
-               
             }
             catch (NotSupportedException)
             {
